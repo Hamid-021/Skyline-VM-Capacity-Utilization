@@ -1,10 +1,15 @@
 ## Skyline Dashboard: VM Resource Utilization Metrics Rendering from the Visualization Page
 
-### Step 1: Download the Python Files
+### Step 1: Download the Python Files & Install dependencies
 
 1. Navigate to the directory:
    ```sh
    cd /etc/skyline
+
+   pip install python-openstackclient openstacksdk libvirt-python
+
+   apt update && apt install -y libvirt-clients libvirt-dev
+   
    ```
 2. Download the Python files to this location and run the code to ensure it works.
 
@@ -32,6 +37,12 @@
      ```
    - Run the code:
      ```sh
+     which virsh
+     
+     openstack hypervisor list
+
+     virsh -c qemu+tcp://root@[hypervisorhost]/system
+     
      python3 app.py
      ```
    - If it works, proceed to the next step to create a new systemd service.
