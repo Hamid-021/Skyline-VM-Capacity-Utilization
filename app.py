@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, request, Response
 from flask_cors import CORS
-from metrics_check import InstanceMetricsCollector
+from metrics_export import InstanceMetricsCollector
 from datetime import datetime, timedelta
 import csv
 import io
